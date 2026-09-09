@@ -1,0 +1,97 @@
+:root {
+  /* NUMERA UI/UX V2 tokens */
+  --ink: #0f1614;
+  --ink-soft: #2a3632;
+  --muted: #6a7a74;
+  --paper: #f3f6f4;
+  --surface: #fafbfa;
+  --surface-elevated: #ffffff;
+  --accent: #1a5c52;
+  --accent-deep: #134740;
+  --accent-soft: #d9ebe5;
+  --bronze: #8a7350;
+  --gold: var(--bronze); /* alias for legacy class hooks */
+  --gold-soft: rgba(138, 115, 80, 0.12);
+  --line: #d8e0db;
+  --line-strong: #b7c5bd;
+  --ok: #1d6b46;
+  --down: #a13d3d;
+  --danger-soft: #f7e8e8;
+
+  --shadow-soft: 0 12px 40px rgba(15, 22, 20, 0.05);
+  --shadow-lift: 0 4px 18px rgba(15, 22, 20, 0.04);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+  --radius: var(--radius-md);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --max: 68rem;
+  --max-prose: 42rem;
+  --max-report: 52rem;
+
+  --touch-min: 44px;
+  --motion-enter: 500ms;
+  --motion-stagger: 70ms;
+  --motion-count: 600ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding:
+    env(safe-area-inset-top, 0)
+    env(safe-area-inset-right, 0)
+    env(safe-area-inset-bottom, 0)
+    env(safe-area-inset-left, 0);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
