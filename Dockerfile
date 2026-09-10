@@ -1,5 +1,5 @@
 # ── Stage 1: build frontend ──────────────────────────────────────────
-FROM node:20-alpine AS frontend
+FROM node:20-bookworm-slim AS frontend
 
 WORKDIR /frontend
 
