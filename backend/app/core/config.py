@@ -9,7 +9,7 @@ def _split_origins(raw: str) -> list[str]:
 
 
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
 
 # Comma-separated list. Defaults preserve local Vite dev.
 CORS_ORIGINS: list[str] = _split_origins(
