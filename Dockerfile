@@ -4,7 +4,9 @@ FROM node:20-bookworm-slim AS frontend
 WORKDIR /frontend
 
 COPY frontend/package.json frontend/package-lock.json ./
-RUN npm install -g npm@10.8.2 && npm ci --include=dev --no-audit --no-fund
+ENV NODE_ENV=development
+
+RUN npm install --include=dev --no-audit --no-fund && test -x node_modules/.bin/tsc
 
 COPY frontend/ ./
 RUN npm run build
