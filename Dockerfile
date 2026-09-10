@@ -1,10 +1,10 @@
 # ── Stage 1: build frontend ──────────────────────────────────────────
-FROM node:22-bookworm-slim AS frontend
+FROM node:20-bookworm-slim AS frontend
 
 WORKDIR /frontend
 
 COPY frontend/package.json frontend/package-lock.json ./
-RUN npm install --no-audit --no-fund
+RUN npm install -g npm@10.8.2 && npm ci --no-audit --no-fund
 
 COPY frontend/ ./
 RUN npm run build
